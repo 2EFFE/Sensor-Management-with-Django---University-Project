@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Dettaglio Sensore</title>
+        {% load static %} <!--Caricamento delle risorse statiche-->
+        <link rel="stylesheet" href="{% static 'gestioneSensori/style.css' %}"> <!--Caricamento file css-->
+    </head>
+    <body>
+        <h1>{{ sensore.tipo }} - {{ sensore.descrizione }}</h1>
+
+        <div class="card"> <!--creazione div con stile card-->
+            <p>Prima lettura: {{ primaLettura.valore }} {{ prima_lettura.unita }}</p>
+            <p>Ultima lettura: {{ ultimaLettura.valore }} {{ ultima_lettura.unita }}</p>
+            <p>Valore medio: {{ mediaLettura }}</p>
+            {% if grafico %}
+                <img src="data:image/png;base64,{{ grafico }}" alt="Grafico Letture" align="center">
+            {% else %}
+                <p>Nessuna lettura disponibile.</p>
+            {% endif %}
+        </div>
+    </body>
+</html>
+

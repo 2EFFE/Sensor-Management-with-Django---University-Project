@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Elenco sensori</title>
+        {% load static %} <!--Caricamento delle risorse statiche-->
+        <link rel="stylesheet" href="{% static 'gestioneSensori/style.css' %}"> <!--Caricamento file css-->
+    </head>
+    <body>
+        <h1>Elenco sensori</h1>
+        <div class="card-container">
+            {% for sensore in sensori %}
+            <a href="/gestioneSensori/{{ sensore.id }}" class="card-link"> <!--Inserimento link-->
+                <div class="card">
+                    <h3>{{ sensore.tipo }}</h3>
+                    <h7>{{ sensore.descrizione }}</h7>
+                    <p>Range temperatura: {{ sensore.temperaturamin }} - {{ sensore.temperaturamax }} °C</p>
+                    <p>Tensione di esercizio: {{ sensore.tensioneesercizio }} V</p>
+                    {% if sensore.accuratezza %}
+                    <p>Accuratezza: {{ sensore.accuratezza }} % </p>
+                    {% endif %}
+                    {% if sensore.precisione %}
+                    <p>Precisione: {{ sensore.precisione }} </p>
+                    {% endif %}   
+                    {% if sensore.tolleranza %}
+                    <p>Tolleranza: {{ sensore.tolleranza }} </p>
+                    {% endif %}                            
+                    {% if sensore.sensibilita %}
+                    <p>Sensibilità: {{ sensore.sensibilita }} % </p>
+                    {% endif %}
+                </div>
+            </a>
+            {% endfor %}
+        </div>
+    </body>
+</html>

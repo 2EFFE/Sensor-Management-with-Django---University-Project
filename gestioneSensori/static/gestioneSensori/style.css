@@ -1,0 +1,56 @@
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+h1 {
+    text-align: center;
+    color: #007BFF;
+}
+
+/* Card Container Styles */
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /*auto-fit: regola in automatico la dimensione*/
+    gap: 20px; /*Margine componenti di 20*/
+    margin-top: 20px; 
+}
+
+/* Card Styles */
+.card {
+    background-color: #fff;
+    border-radius: 8px; /*bordo arrotondato*/
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /*ombra card*/
+    padding: 15px;
+    transition: transform 0.2s, box-shadow 0.2s; /*mouse sul quadratino -> inserisce ombra*/
+}
+
+.card img {   /* grafico */
+    display: block; 
+    margin: 0 auto; 
+}
+
+.card:hover { 
+    transform: translateY(-5px); /*mouse sulla card -> spostamento verso l'alto */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /*ombra card*/
+}
+
+/* Card Content Styles */
+.card h3 {
+    margin-top: 0;
+    color: #007BFF;
+}
+
+.card p {
+    margin: 5px 0;
+    color: #555;
+}
+
+.card-link {
+    text-decoration: none; /* Rimuove la sottolineatura */
+    color: inherit; /* Stesso colore del blocco */
+    display: block; /* Applicato all'intera card */
+}
